@@ -1,0 +1,33 @@
+MACQ - Most asked coding question
+
+import java.util.*;
+
+//Implement a function isPalindromeString that takes a String as input and return true if its a palindrome , false otherwise.
+public class Main {
+  public static boolean isPalindromeString(String str){
+
+    if(str == null){
+      return false;
+    }
+
+     int left = 0, right = str.length()-1;
+     while(left< right){
+      if(str.charAt(left) != str.charAt(right)){
+        return false;
+     }
+     left++;
+     right--;
+     }
+     return true;
+  }
+
+  public static void main(String[] args){
+  
+    Scanner sc = new Scanner(System.in);
+    System.out.println("Enter String : ");
+    String str = sc.nextLine();
+    System.out.println(isPalindromeString(str));
+    System.out.println(isPalindromeString(null));      // false
+
+  }
+}
