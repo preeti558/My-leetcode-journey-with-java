@@ -1,0 +1,32 @@
+import java.util.*;
+
+class Main{
+ //Implement a function 'generateFibonacciRecursion' to generate the Fibonacci series up to the nth term using recursion 
+public static int fabonacci(int n){
+  if(n == 0) return 0;
+  if(n == 1) return 1;
+
+
+  return fabonacci(n-1) + fabonacci(n-2);
+}
+
+  public static void generateFibonacciRecusion(int n){
+    if(n < 0) {
+      System.out.println("Number is Invalid");
+      return;
+    }
+
+    for(int i=0; i<n; i++){
+      System.out.print(fabonacci(i) + " ");
+    }
+    
+  }
+
+  public static void main(String[] args){
+    Scanner sc = new Scanner(System.in);
+    System.out.println("Enter Number : ");
+    int n = sc.nextInt();
+    generateFibonacciRecusion(n);
+  }
+
+}
