@@ -1,0 +1,30 @@
+import java.util.*;
+
+//Implement a function 'countCharacterOccurrences' that takes a string and returns a dictionary mapping each unique character to its occurrence count
+class Main{
+  public static Map<Character, Integer> countCharacterOccurrences(String str){
+    HashMap<Character, Integer> hm = new HashMap<>();
+   if(str.isEmpty() || str == null){
+    return hm;
+   }
+
+   for(char ch : str.toCharArray()){
+    hm.put(ch, hm.getOrDefault(ch, 0) + 1);
+   }
+
+   return hm;
+  }
+  
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    System.out.println("Enter String :");
+    String str = sc.nextLine();
+    
+    Map<Character, Integer> res = countCharacterOccurrences(str);
+
+    for(Map.Entry<Character, Integer> entry : res.entrySet()){
+      System.out.println(entry.getKey() + ":" + entry.getValue());
+    }
+    
+  }
+}
