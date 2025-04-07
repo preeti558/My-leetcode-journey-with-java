@@ -1,0 +1,34 @@
+import java.util.*;
+
+//Implement a function 'generatePrimesInRange' that takes two integers start and end and returns a list of a prime numbers in that range.
+class Main{
+ 
+  public static List<Integer> generatePrimesInRange(int start, int end){
+    List<Integer> list = new ArrayList<>();
+
+    if(start > end){
+      return list;
+    }
+
+    for(int i=Math.max(start, 2); i<=end; i++){
+      if(isPrime(i)){
+        list.add(i);
+      }
+    }
+    return list;
+  }
+
+  private static boolean isPrime(int num){
+    if(num <= 1) return false;
+
+    for(int i=2; i*i <=num; i++){
+      if(num %i == 0) return false;
+    }
+    return true;
+  }
+  public static void main(String[] args) {
+    List<Integer> l = generatePrimesInRange(10, 50);
+    System.out.println("prime between 10 and 50 :" + l);
+    
+  }
+}
