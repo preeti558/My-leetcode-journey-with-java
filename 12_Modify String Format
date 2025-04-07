@@ -1,0 +1,19 @@
+import java.util.*;
+
+
+class Main{
+ 
+  public static String modifyStringFormat(String str){
+   if(str == null || str.isEmpty()){
+    return "";
+   }
+  return str.replace(" ", "_");
+  }
+  public static void main(String[] args) {
+    Scanner sc = new Scanner(System.in);
+    System.out.println("Enter String");
+    String str = sc.nextLine();
+    System.out.print(modifyStringFormat(str));
+    
+  }
+}
